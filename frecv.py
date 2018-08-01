@@ -38,7 +38,7 @@ recvd=nrcv-port-1
 
 fp=open(fnm,"wb")
 
-fp.write(msg[port+1:recvd])
+fp.write(msg[port+1:nrcv])
 
 while(recvd<lth_ctnt):
     nrcv=c.recv_into(msg, maxrecv)
