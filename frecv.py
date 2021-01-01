@@ -44,6 +44,7 @@ while(recvd<lth_ctnt):
     nrcv=c.recv_into(msg, maxrecv)
     recvd+=nrcv
     fp.write(msg[0:nrcv])
+    print(str(nrecvd)+"\r",end="")
 
 # send reply
 c.send((recvd).to_bytes(8,byteorder='big'))

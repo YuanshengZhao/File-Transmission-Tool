@@ -39,6 +39,7 @@ nhdr=len(msg)
 nhsnd=c.send(msg+fp.read(maxrecv-nhdr))-nhdr
 while(nhsnd<fsize):
     nhsnd+=c.send(fp.read(maxrecv))
+    print(str(nhsnd)+"\r",end="")
 
 fp.close()
 nrtn=int.from_bytes(c.recv(8),byteorder='big')
